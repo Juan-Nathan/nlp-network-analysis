@@ -42,7 +42,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
 - **Distance**: Cosine  
 - **Linkage**: Ward.D  
 - **Clustering Accuracy**: 23/24 (≈96%)  
-- Documents mostly grouped accurately by genre  
+- Documents grouped almost perfectly by genre, indicating strong separability with minimal overlap
 - `sport_5.txt` was misclassified with reviews due to overlapping analytical language
 
 ### 💬 Sentiment Analysis
@@ -134,6 +134,7 @@ To enhance accuracy and insight:
 ## 👤 Author
 
 Developed by Juan Nathan.
+
 
 
 
