@@ -7,7 +7,7 @@ This project applies Natural Language Processing (NLP) and Network Analysis tech
 - **Total Documents**: 24  
 - **Genres**: Politics (8), Sport (8), Reviews (8)  
 - **Minimum Document Length**: 200 words  
-- **Format**: Plain text files in the `corpus/` folder  
+- **Format**: Plain text files in the `corpus` folder  
 - **Sources**:  
   - Politics: e.g., BBC News  
   - Sport: e.g., ESPN  
@@ -134,6 +134,7 @@ To enhance accuracy and insight:
 ## 👤 Author
 
 Developed by Juan Nathan.
+
 
 
 
