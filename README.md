@@ -2,7 +2,7 @@
 
 This project applies Natural Language Processing (NLP) and Network Analysis techniques in R to analyze a collection of documents from three distinct genres: **Politics**, **Sport**, and **Reviews**. The workflow involves preprocessing raw text data, generating a document-term matrix (DTM), clustering documents, analyzing sentiment, and constructing multiple types of networks—document, token, and bipartite—to explore deeper relationships in the corpus.
 
-## 📁 Corpus Overview
+## Corpus Overview
 
 - **Total Documents**: 24  
 - **Genres**: Politics (8), Sport (8), Reviews (8)  
@@ -14,38 +14,38 @@ This project applies Natural Language Processing (NLP) and Network Analysis tech
   - Reviews: e.g., IGN  
 - **Naming Convention**: `genre_id.txt` (e.g., `politics_1.txt`)
 
-## 🧰 Technologies Used
+## Technologies Used
 
 - **Language**: R
 - **IDE**: RStudio
 - **Packages**: `tm`, `SnowballC`, `proxy`, `SentimentAnalysis`, `igraph`, `RColorBrewer`
 
-## 🧪 Methodology
+## Methodology
 
-### 🔄 Preprocessing
+### Preprocessing
 Performed using `tm`, `SnowballC`, and regular expressions:
 - Removed numbers, punctuation, quotes
 - Converted to lowercase
 - Removed custom common words and English stopwords
 - Applied stemming
 
-### 📊 Document-Term Matrix (DTM)
+### Document-Term Matrix (DTM)
 - Created using `tm`:
   - Converted the preprocessed corpus into a DTM
   - Removed sparse terms from the DTM (retaining terms in ≥ 30% of documents)
 - Converted the DTM into a matrix
 - Selected 30 informative tokens manually
 
-## 📌 Analysis & Results
+## Analysis & Results
 
-### 🔗 Hierarchical Clustering
+### Hierarchical Clustering
 - **Distance**: Cosine  
 - **Linkage**: Ward.D  
 - **Clustering Accuracy**: 23/24 (≈96%)  
 - Documents grouped almost perfectly by genre, indicating strong separability with minimal overlap
 - `sport_5.txt` was misclassified with reviews due to overlapping analytical language
 
-### 💬 Sentiment Analysis
+### Sentiment Analysis
 - **Tool**: `SentimentAnalysis` 
 - **Dictionary**: QDAP  
 - **Metrics**:  
@@ -62,7 +62,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
     - Reviews were significantly more positive than politics (p = 0.031)
     - No significant difference between reviews and sports, or sports and politics
 
-### 🌐 Single-Mode Document Network
+### Single-Mode Document Network
 - Nodes = Documents  
 - Edges = Number of shared tokens between documents   
 - **Central Documents**:  
@@ -75,7 +75,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
   - Node size = eigenvector centrality 
   - Edge width = shared token count
 
-### 🧠 Token Co-Occurrence Network
+### Token Co-Occurrence Network
 - Nodes = Tokens  
 - Edges = Co-occurrence frequency across documents  
 - **Important Tokens**:  
@@ -88,7 +88,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
   - Node size = betweenness centrality
   - Edge width = co-occurrence frequency
 
-### 🔄 Bipartite Document-Token Network
+### Bipartite Document-Token Network
 - Documents linked to tokens they contain
 - Nodes: Documents and tokens
 - Edges = Token frequency in document
@@ -101,22 +101,22 @@ Performed using `tm`, `SnowballC`, and regular expressions:
   - Token node size = degree
   - Edge width = token frequency
 
-## 📌 Summary
+## Summary
 
-### 📄 Important Documents and Tokens
+### Important Documents and Tokens
 Most documents and tokens were highly interconnected due to shared vocabulary. However, centrality analysis highlighted several key nodes:
 - **Documents**: `politics_5.txt`, `review_3.txt`, and `review_7.txt` consistently showed high centrality, acting as bridges between genres.
 - **Tokens**: `world`, `fight`, `stori`, and `state` frequently co-occurred and played key connective roles across the corpus.
 
-### 🧭 Groups and Clusters
+### Groups and Clusters
 Community detection and hierarchical clustering both grouped documents and tokens primarily by genre. Politics, reviews, and sports formed distinct clusters, with few overlaps like `sport_5.txt` appearing in review clusters due to thematic similarity.
 
-### 🧩 Clustering vs. Network Analysis
+### Clustering vs. Network Analysis
 - **Clustering** was highly accurate (~96%) and effective for detecting major genre divisions.
 - **Network analysis** offered deeper insight into overlapping language, node influence, and structural roles that clustering could not reveal.
 - Used together, both methods provide a comprehensive understanding of both dominant groupings and nuanced relationships within the corpus.
 
-## 💡 Suggested Improvements
+## Suggested Improvements
 
 To enhance accuracy and insight:
 - Use **lemmatization** over stemming
@@ -125,18 +125,15 @@ To enhance accuracy and insight:
 - Use **contextual embeddings** (e.g., BERT)
 - Incorporate **POS filtering**, **topic modeling**, **dimensionality reduction**
 
-## 🚀 How to Run
+## How to Run
 
 1. Clone the repository or download the ZIP file from GitHub.
 2. Open the project folder in RStudio.
 3. Run the R script (`nlp_network_analysis.r`) inside the RStudio environment.
 
-## 👤 Author
+## Author
 
 Developed by Juan Nathan.
-
-
-
 
 
 
