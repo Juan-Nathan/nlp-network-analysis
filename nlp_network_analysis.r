@@ -5,6 +5,7 @@ set.seed(33270961)
 # ============================================================================== 
 # LOAD REQUIRED LIBRARIES 
 # ============================================================================== 
+
 library(tm)                # Text mining 
 library(SnowballC)         # Stemming 
 library(proxy)             # Distance calculations 
@@ -15,6 +16,7 @@ library(RColorBrewer)      # Color palettes
 # ============================================================================== 
 # DATA LOADING AND PREPROCESSING 
 # ============================================================================== 
+
 # Set path to corpus folder 
 cname <- file.path(".", "corpus") 
 # Read documents into a Corpus object 
@@ -54,6 +56,7 @@ docs <- tm_map(docs, stemDocument, language = "english")
 # ============================================================================== 
 # DOCUMENT-TERM MATRIX CREATION 
 # ============================================================================== 
+                                    
 # Create the Document-Term Matrix 
 dtm <- DocumentTermMatrix(docs) 
 # Remove sparse terms (keeping terms that appear in at least 30% of documents) 
@@ -73,7 +76,8 @@ View(dtm_mat)
 
 # ============================================================================== 
 # HIERARCHICAL CLUSTERING ANALYSIS 
-# ============================================================================== 
+# ==============================================================================
+                                         
 # Calculate cosine distance and perform hierarchical clustering 
 cosine_dist <- proxy::dist(dtm_mat, method = "cosine") 
 hc <- hclust(cosine_dist, method = "ward.D") 
@@ -93,7 +97,8 @@ table(Genres = genres, Clusters = cluster_assignments)
 
 # ============================================================================== 
 # SENTIMENT ANALYSIS BY GENRE 
-# ============================================================================== 
+# ==============================================================================
+                                         
 # Perform sentiment analysis 
 SentimentA <- analyzeSentiment(docs) 
 SentimentA$Genre <- genres 
@@ -103,9 +108,9 @@ boxplot(SentimentQDAP ~ Genre, data = SentimentA, frame = TRUE,
         main = "SentimentQDAP by Genre") 
 boxplot(PositivityQDAP ~ Genre, data = SentimentA, frame = TRUE,  
         main = "PositivityQDAP by Genre") 
-# Statistical analysis: Display boxplot statistics without plotting 
+# Display boxplot statistics 
 boxplot(SentimentQDAP ~ Genre, data = SentimentA, plot = FALSE) 
-boxplot(PositivityQDAP ~ Genre, data = SentimentA, plot = FALSE) 
+boxplot(PositivityQDAP ~ Genre, data = SentimentA, plot = FALSE)                       
 # Pairwise t-tests for positivity differences between genres 
 # Test 1: Review vs Politics 
 lhs <- SentimentA[SentimentA$Genre == "review", "PositivityQDAP"] 
@@ -123,6 +128,7 @@ t.test(lhs, rhs, alternative = "greater")
 # ============================================================================== 
 # DOCUMENT SIMILARITY NETWORK (SINGLE-MODE) 
 # ============================================================================== 
+                                         
 # Convert DTM to binary (presence/absence of terms) 
 dtm_bin <- (dtm_mat > 0) + 0 
 # Compute shared term matrix (documents × documents) 
@@ -167,6 +173,7 @@ plot(comm, g, main = "Communities Detected Using the Louvain Method")
 # ============================================================================== 
 # ENHANCED DOCUMENT SIMILARITY NETWORK VISUALIZATION 
 # ============================================================================== 
+                                         
 # Attach sentiment scores to network vertices 
 V(g)$sentiment <- SentimentA$SentimentQDAP 
 # Set vertex size based on eigenvector centrality 
@@ -203,9 +210,11 @@ legend("bottomleft",
        legend = c("Negative", "Neutral", "Positive"), 
        fill = sentiment_palette[c(1, n_colors %/% 2, n_colors)], 
        title = "Sentiment") 
+                                         
 # ============================================================================== 
 # TOKEN CO-OCCURRENCE NETWORK (SINGLE-MODE) 
 # ============================================================================== 
+                                         
 # Convert to binary for token analysis 
 dtm_bin_token <- (dtm_mat > 0) + 0 
 # Compute token-by-token co-occurrence matrix 
@@ -248,6 +257,7 @@ plot(comm, g, main = "Token Communities Detected Using the Louvain Method")
 # ============================================================================== 
 # ENHANCED TOKEN CO-OCCURRENCE NETWORK VISUALIZATION 
 # ============================================================================== 
+                                         
 # Set vertex size based on betweenness centrality 
 betw_range_token <- max(betw) - min(betw) 
 if (betw_range_token == 0) { 
@@ -285,6 +295,7 @@ legend("topright",
 # ============================================================================== 
 # BIPARTITE NETWORK CONSTRUCTION 
 # ============================================================================== 
+                                         
 # Prepare edge list from document-term matrix 
 dtmsa <- as.data.frame(dtm_mat) 
 dtmsa$doc_id <- rownames(dtmsa) 
@@ -319,6 +330,7 @@ plot(g, vertex.label.cex = 0.7, main = "Bipartite Document-Token Network")
 # ============================================================================== 
 # BIPARTITE NETWORK ANALYSIS 
 # ============================================================================== 
+                                         
 # Separate documents and tokens for analysis 
 docs_bp <- V(g)[V(g)$type == FALSE]$name  # Documents (type = FALSE) 
 tokens_bp <- V(g)[V(g)$type == TRUE]$name  # Tokens (type = TRUE) 
@@ -341,6 +353,7 @@ print(group_list)
 # ============================================================================== 
 # ENHANCED BIPARTITE NETWORK VISUALIZATION 
 # ============================================================================== 
+                                         
 # Add genre colors to documents based on filename patterns 
 genres <- ifelse(grepl("politics", V(g)$name), "Politics", 
                  ifelse(grepl("review", V(g)$name), "Review", 
