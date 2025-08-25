@@ -22,6 +22,7 @@ cname <- file.path(".", "corpus")
 # Read documents into a Corpus object 
 docs <- Corpus(DirSource(cname)) 
 print(summary(docs)) 
+
 # Define common words to remove (in addition to standard stopwords) 
 common_words <- c( 
   "also", "back", "can", "come", "even", "first", "get", "just", "last", "like", 
@@ -33,10 +34,11 @@ common_words <- c(
   "always", "set", "turn", "happen", "recent", "far", "past", "return", "follow", 
   "during", "start", "end", "try", "clear" 
 ) 
-# Create regex pattern for common word removal 
-pattern <- paste0("\\b(", paste(common_words, collapse = "|"), ")\\b") 
+
 # Text preprocessing pipeline 
 # Remove numbers 
+# Create regex pattern for common word removal 
+pattern <- paste0("\\b(", paste(common_words, collapse = "|"), ")\\b") 
 docs <- tm_map(docs, removeNumbers) 
 # Remove punctuation 
 docs <- tm_map(docs, removePunctuation)  
@@ -63,6 +65,7 @@ dtm <- DocumentTermMatrix(docs)
 dtm_sparse <- removeSparseTerms(dtm, 0.7) 
 print(dim(dtm_sparse)) 
 print(inspect(dtm_sparse)) 
+                                         
 # Convert to matrix and select 30 most informative tokens 
 dtm_mat <- as.matrix(dtm_sparse) 
 selected_tokens <- c( 
@@ -110,7 +113,8 @@ boxplot(PositivityQDAP ~ Genre, data = SentimentA, frame = TRUE,
         main = "PositivityQDAP by Genre") 
 # Display boxplot statistics 
 boxplot(SentimentQDAP ~ Genre, data = SentimentA, plot = FALSE) 
-boxplot(PositivityQDAP ~ Genre, data = SentimentA, plot = FALSE)                       
+boxplot(PositivityQDAP ~ Genre, data = SentimentA, plot = FALSE) 
+                                         
 # Pairwise t-tests for positivity differences between genres 
 # Test 1: Review vs Politics 
 lhs <- SentimentA[SentimentA$Genre == "review", "PositivityQDAP"] 
@@ -134,14 +138,16 @@ dtm_bin <- (dtm_mat > 0) + 0
 # Compute shared term matrix (documents × documents) 
 adj_mat <- dtm_bin %*% t(dtm_bin) 
 # Remove self-loops (documents don't connect to themselves) 
-diag(adj_mat) <- 0 
+diag(adj_mat) <- 0                    
 # Create igraph object for document similarity network 
 g <- graph_from_adjacency_matrix(adj_mat, mode = "undirected", weighted = TRUE) 
 # Reset plotting layout 
 par(mfrow = c(1, 1)) 
+                                         
 # Plot basic document similarity network 
 set.seed(33270961) 
 plot(g, vertex.label.cex = 0.7, main = "Single-Mode Network: Shared Terms") 
+                                         
 # Calculate centrality measures (using inverse weights for distance-based measures) 
 inv_weights <- 1 / E(g)$weight 
 # Degree centrality: Number of direct connections per document 
@@ -192,6 +198,7 @@ sentiment_bins <- cut(as.numeric(sentiment_scaled), breaks = n_colors,
 V(g)$color <- sentiment_palette[sentiment_bins] 
 # Set edge width based on connection strength 
 E(g)$width <- 1 + E(g)$weight / max(E(g)$weight) * 4 
+                                         
 # Plot enhanced network 
 set.seed(33270961) 
 plot( 
@@ -223,9 +230,11 @@ adj_mat_token <- t(dtm_bin_token) %*% dtm_bin_token
 diag(adj_mat_token) <- 0 
 # Create igraph object for token network 
 g <- graph_from_adjacency_matrix(adj_mat_token, mode = "undirected", weighted = TRUE) 
+                                         
 # Plot basic token co-occurrence network 
 set.seed(33270961) 
 plot(g, vertex.label.cex = 0.7, main = "Single-Mode Network: Token Co-Occurrence") 
+                                         
 # Calculate centrality measures for tokens 
 inv_weights <- 1 / E(g)$weight 
 # Degree centrality for tokens 
@@ -273,6 +282,7 @@ closeness_bins <- cut(as.numeric(close), breaks = n_colors,
 V(g)$color <- token_palette[closeness_bins] 
 # Set edge width based on co-occurrence frequency 
 E(g)$width <- 1 + E(g)$weight / max(E(g)$weight) * 4 
+                                         
 # Plot enhanced token network 
 set.seed(33270961) 
 plot( 
@@ -323,14 +333,11 @@ V(g)$type <- bipartite_mapping(g)$type
 # Set initial colors and shapes (documents = pink circles, tokens = green squares) 
 V(g)$color <- ifelse(V(g)$type, "lightgreen", "pink") 
 V(g)$shape <- ifelse(V(g)$type, "circle", "square") 
+                                         
 # Plot basic bipartite network 
 set.seed(33270961) 
 plot(g, vertex.label.cex = 0.7, main = "Bipartite Document-Token Network")
 
-# ============================================================================== 
-# BIPARTITE NETWORK ANALYSIS 
-# ============================================================================== 
-                                         
 # Separate documents and tokens for analysis 
 docs_bp <- V(g)[V(g)$type == FALSE]$name  # Documents (type = FALSE) 
 tokens_bp <- V(g)[V(g)$type == TRUE]$name  # Tokens (type = TRUE) 
@@ -375,6 +382,7 @@ V(g)$size[V(g)$type == FALSE] <- 15
 E(g)$width <- 1 + (E(g)$weight / max(E(g)$weight)) * 8 
 # Create vertex labels (only show token names for clarity) 
 vertex_labels <- ifelse(V(g)$type, V(g)$name, NA) 
+                                         
 # Plot final enhanced bipartite network 
 set.seed(33270961) 
 plot( 
