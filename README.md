@@ -51,7 +51,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
 - **Metrics**:  
   - `SentimentQDAP` (net polarity)  
   - `PositivityQDAP` (positive word proportion)  
-- **Findings**:
+- **Findings (from descriptive statistics and hypothesis testing)**:
   - `SentimentQDAP`:
     - Sports articles had the most positive overall tone (highest polarity)
     - Reviews were slightly positive on average
@@ -134,6 +134,7 @@ To enhance accuracy and insight:
 ## Author
 
 Developed by Juan Nathan.
+
 
 
 
