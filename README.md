@@ -1,6 +1,6 @@
 # 📚 Natural Language Processing & Network Analysis on a Document Corpus
 
-This project applies natural language processing (NLP) and network analysis techniques in R to analyze a collection of documents from three distinct genres: **Politics**, **Sport**, and **Reviews**. The workflow involves preprocessing raw text data, generating a document-term matrix (DTM), clustering documents, analyzing sentiment, and constructing multiple types of networks—document, token, and bipartite—to explore deeper relationships in the corpus.
+This project applies natural language processing (NLP) and network analysis techniques in R to analyze a collection of documents from three distinct genres: **Politics**, **Sport**, and **Reviews**. The workflow involves preprocessing raw text data, generating a document-term matrix, clustering documents, analyzing sentiment, and constructing multiple types of networks—document, token, and bipartite—to explore deeper relationships in the corpus.
 
 ## Corpus Overview
 
@@ -134,6 +134,7 @@ To enhance accuracy and insight:
 ## Author
 
 Developed by Juan Nathan.
+
 
 
 
