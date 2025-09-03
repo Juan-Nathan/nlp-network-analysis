@@ -43,7 +43,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
 - **Linkage**: Ward.D  
 - **Clustering Accuracy**: 23/24 (≈96%)  
 - Documents grouped almost perfectly by genre, indicating strong separability with minimal overlap
-- `sport_5.txt` was misclassified with reviews due to overlapping analytical language
+- `sport_5.txt` was misclassified with Reviews due to overlapping analytical language
 
 ### Sentiment Analysis
 - **Tool**: `SentimentAnalysis` 
@@ -53,14 +53,14 @@ Performed using `tm`, `SnowballC`, and regular expressions:
   - `PositivityQDAP` (positive word proportion)  
 - **Findings (from descriptive statistics and hypothesis testing)**:
   - `SentimentQDAP`:
-    - Sports articles had the most positive overall tone (highest polarity)
+    - Sports had the most positive overall tone (highest polarity)
     - Reviews were slightly positive on average
     - Politics had the lowest and most variable polarity scores
   - `PositivityQDAP`:
     - Reviews used positive words most consistently and had the highest median positivity
-    - Politics and sports had similar average positivity but showed greater variability
-    - Reviews were significantly more positive than politics (p = 0.031)
-    - No significant difference between reviews and sports, or sports and politics
+    - Politics and Sports had similar average positivity but showed greater variability
+    - Reviews were significantly more positive than Politics (p = 0.031)
+    - No significant difference between Reviews and Sports, or Sports and Politics
 
 ### Single-Mode Document Network
 - Nodes = Documents  
@@ -109,7 +109,7 @@ Most documents and tokens were highly interconnected due to shared vocabulary. H
 - **Tokens**: `world`, `fight`, `stori`, and `state` frequently co-occurred and played key connective roles across the corpus.
 
 ### Groups and Clusters
-Community detection and hierarchical clustering both grouped documents and tokens primarily by genre. Politics, reviews, and sports formed distinct clusters, with few overlaps like `sport_5.txt` appearing in review clusters due to thematic similarity.
+Community detection and hierarchical clustering both grouped documents and tokens primarily by genre. Politics, Reviews, and Sports formed distinct clusters, with few overlaps like `sport_5.txt` appearing in review clusters due to thematic similarity.
 
 ### Clustering vs. Network Analysis
 - **Clustering** was highly accurate (~96%) and effective for detecting major genre divisions.
@@ -134,6 +134,7 @@ To enhance accuracy and insight:
 ## Author
 
 Developed by Juan Nathan.
+
 
 
 
