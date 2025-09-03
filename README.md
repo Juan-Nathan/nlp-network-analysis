@@ -59,7 +59,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
   - `PositivityQDAP`:
     - Reviews used positive words most consistently and had the highest median positivity.
     - Politics and Sports had similar average positivity but showed greater variability.
-    - Reviews were significantly more positive than Politics (p = 0.031).
+    - Reviews were significantly more positive than Politics.
     - No significant difference between Reviews and Sports, or Sports and Politics.
 
 ### Single-Mode Document Network
@@ -134,6 +134,7 @@ To enhance accuracy and insight:
 ## Author
 
 Developed by Juan Nathan.
+
 
 
 
