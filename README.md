@@ -43,7 +43,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
 - **Linkage**: Ward.D  
 - **Clustering Accuracy**: 23/24 (≈96%)  
 - Documents grouped almost perfectly by genre, indicating strong separability with minimal overlap.
-- `sport_5.txt` was misclassified with Reviews due to overlapping analytical language.
+- `sports_5.txt` was misclassified with Reviews due to overlapping analytical language.
 
 ### Sentiment Analysis
 - **Tool**: `SentimentAnalysis` 
@@ -66,10 +66,10 @@ Performed using `tm`, `SnowballC`, and regular expressions:
 - Nodes = Documents  
 - Edges = Number of shared tokens between documents   
 - **Central Documents**:  
-  - `politics_5.txt`, `review_3.txt`, `review_7.txt`  
+  - `politics_5.txt`, `reviews_3.txt`, `reviews_7.txt`  
 - **Communities**:  
   - Documents mainly grouped by genre.
-  - Exceptions like `review_1.txt` reflected shared themes or vocabulary.
+  - Exceptions like `reviews_1.txt` reflected shared themes or vocabulary.
 - **Enhanced Network**: 
   - Node color = sentiment
   - Node size = eigenvector centrality 
@@ -94,7 +94,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
 - Edges = Token frequency in document
 - **Findings**:  
   - Documents and tokens generally grouped by genre.
-  - Exceptions like `sport_5.txt` and `event` reflected shared themes or vocabulary.
+  - Exceptions like `sports_5.txt` and `event` reflected shared themes or vocabulary.
 - **Enhanced Network**: 
   - Node color = genre
   - Node shape = node type
@@ -105,11 +105,11 @@ Performed using `tm`, `SnowballC`, and regular expressions:
 
 ### Important Documents and Tokens
 Most documents and tokens were highly interconnected due to shared vocabulary. However, centrality analysis highlighted several key nodes:
-- **Documents**: `politics_5.txt`, `review_3.txt`, and `review_7.txt` consistently showed high centrality, acting as bridges between genres.
+- **Documents**: `politics_5.txt`, `reviews_3.txt`, and `reviews_7.txt` consistently showed high centrality, acting as bridges between genres.
 - **Tokens**: `world`, `fight`, `stori`, and `state` frequently co-occurred and played key connective roles across the corpus.
 
 ### Groups and Clusters
-Community detection and hierarchical clustering both grouped documents and tokens primarily by genre. Politics, Reviews, and Sports formed distinct clusters, with few overlaps like `sport_5.txt` appearing in review clusters due to thematic similarity.
+Community detection and hierarchical clustering both grouped documents and tokens primarily by genre. Politics, Reviews, and Sports formed distinct clusters, with few overlaps like `sports_5.txt` appearing in review clusters due to thematic similarity.
 
 ### Clustering vs. Network Analysis
 - **Clustering** was highly accurate (≈96%) and effective for detecting major genre divisions.
@@ -134,6 +134,7 @@ To enhance accuracy and insight:
 ## Author
 
 Developed by Juan Nathan.
+
 
 
 
