@@ -42,8 +42,8 @@ Performed using `tm`, `SnowballC`, and regular expressions:
 - **Distance**: Cosine  
 - **Linkage**: Ward.D  
 - **Clustering Accuracy**: 23/24 (≈96%)  
-- Documents grouped almost perfectly by genre, indicating strong separability with minimal overlap
-- `sport_5.txt` was misclassified with Reviews due to overlapping analytical language
+- Documents grouped almost perfectly by genre, indicating strong separability with minimal overlap.
+- `sport_5.txt` was misclassified with Reviews due to overlapping analytical language.
 
 ### Sentiment Analysis
 - **Tool**: `SentimentAnalysis` 
@@ -53,14 +53,14 @@ Performed using `tm`, `SnowballC`, and regular expressions:
   - `PositivityQDAP` (positive word proportion)  
 - **Findings (from descriptive statistics and hypothesis testing)**:
   - `SentimentQDAP`:
-    - Sports had the most positive overall tone (highest polarity)
-    - Reviews were slightly positive on average
-    - Politics had the lowest and most variable polarity scores
+    - Sports had the most positive overall tone (highest polarity).
+    - Reviews were slightly positive on average.
+    - Politics had the lowest and most variable polarity scores.
   - `PositivityQDAP`:
-    - Reviews used positive words most consistently and had the highest median positivity
-    - Politics and Sports had similar average positivity but showed greater variability
-    - Reviews were significantly more positive than Politics (p = 0.031)
-    - No significant difference between Reviews and Sports, or Sports and Politics
+    - Reviews used positive words most consistently and had the highest median positivity.
+    - Politics and Sports had similar average positivity but showed greater variability.
+    - Reviews were significantly more positive than Politics (p = 0.031).
+    - No significant difference between Reviews and Sports, or Sports and Politics.
 
 ### Single-Mode Document Network
 - Nodes = Documents  
@@ -68,8 +68,8 @@ Performed using `tm`, `SnowballC`, and regular expressions:
 - **Central Documents**:  
   - `politics_5.txt`, `review_3.txt`, `review_7.txt`  
 - **Communities**:  
-  - Documents mainly grouped by genre
-  - Exceptions like `review_1.txt` reflected shared themes or vocabulary
+  - Documents mainly grouped by genre.
+  - Exceptions like `review_1.txt` reflected shared themes or vocabulary.
 - **Enhanced Network**: 
   - Node color = sentiment
   - Node size = eigenvector centrality 
@@ -81,8 +81,8 @@ Performed using `tm`, `SnowballC`, and regular expressions:
 - **Important Tokens**:  
   - `world`, `fight`, `stori`, `state`
 - **Communities**: 
-  - Tokens largely grouped by genre
-  - Exceptions like `futur` and `kill` reflected overlap in usage across different genres
+  - Tokens largely grouped by genre.
+  - Exceptions like `futur` and `kill` reflected overlap in usage across different genres.
 - **Enhanced Network**: 
   - Node color = closeness
   - Node size = betweenness centrality
@@ -93,8 +93,8 @@ Performed using `tm`, `SnowballC`, and regular expressions:
 - Nodes: Documents and tokens
 - Edges = Token frequency in document
 - **Findings**:  
-  - Documents and tokens generally grouped by genre  
-  - Exceptions like `sport_5.txt` and `event` reflected shared themes or vocabulary
+  - Documents and tokens generally grouped by genre.
+  - Exceptions like `sport_5.txt` and `event` reflected shared themes or vocabulary.
 - **Enhanced Network**: 
   - Node color = genre
   - Node shape = node type
@@ -134,6 +134,7 @@ To enhance accuracy and insight:
 ## Author
 
 Developed by Juan Nathan.
+
 
 
 
