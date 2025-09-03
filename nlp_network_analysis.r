@@ -94,7 +94,7 @@ print(cluster_assignments)
 namelist <- as.data.frame(as.table(summary(docs))) 
 namelist <- head(namelist, length(docs)) 
 genres <- ifelse(grepl("politics", namelist$Var1), "politics", 
-                 ifelse(grepl("review", namelist$Var1), "review", "sport")) 
+                 ifelse(grepl("reviews", namelist$Var1), "reviews", "sports")) 
 # Cross-tabulate genres vs clusters 
 table(Genres = genres, Clusters = cluster_assignments)
 
@@ -116,16 +116,16 @@ boxplot(SentimentQDAP ~ Genre, data = SentimentA, plot = FALSE)
 boxplot(PositivityQDAP ~ Genre, data = SentimentA, plot = FALSE) 
                                          
 # Pairwise t-tests for positivity differences between genres 
-# Test 1: Review vs Politics 
-lhs <- SentimentA[SentimentA$Genre == "review", "PositivityQDAP"] 
+# Test 1: ReviewS vs Politics 
+lhs <- SentimentA[SentimentA$Genre == "reviews", "PositivityQDAP"] 
 rhs <- SentimentA[SentimentA$Genre == "politics", "PositivityQDAP"] 
 t.test(lhs, rhs, alternative = "greater") 
-# Test 2: Review vs Sport 
-lhs <- SentimentA[SentimentA$Genre == "review", "PositivityQDAP"] 
-rhs <- SentimentA[SentimentA$Genre == "sport", "PositivityQDAP"] 
+# Test 2: ReviewS vs Sports 
+lhs <- SentimentA[SentimentA$Genre == "reviews", "PositivityQDAP"] 
+rhs <- SentimentA[SentimentA$Genre == "sports", "PositivityQDAP"] 
 t.test(lhs, rhs, alternative = "greater") 
-# Test 3: Sport vs Politics 
-lhs <- SentimentA[SentimentA$Genre == "sport", "PositivityQDAP"] 
+# Test 3: Sports vs Politics 
+lhs <- SentimentA[SentimentA$Genre == "sports", "PositivityQDAP"] 
 rhs <- SentimentA[SentimentA$Genre == "politics", "PositivityQDAP"] 
 t.test(lhs, rhs, alternative = "greater")
 
@@ -363,10 +363,10 @@ print(group_list)
                                          
 # Add genre colors to documents based on filename patterns 
 genres <- ifelse(grepl("politics", V(g)$name), "Politics", 
-                 ifelse(grepl("review", V(g)$name), "Review", 
-                        ifelse(grepl("sport", V(g)$name), "Sport", NA))) 
+                 ifelse(grepl("reviews", V(g)$name), "Reviews", 
+                        ifelse(grepl("sports", V(g)$name), "Sports", NA))) 
 # Set color palette for document genres 
-doc_palette <- c("Politics" = "skyblue", "Review" = "orange", "Sport" = "purple") 
+doc_palette <- c("Politics" = "skyblue", "Reviews" = "orange", "Sports" = "purple") 
 V(g)$color <- ifelse(V(g)$type, "lightgray", doc_palette[genres]) 
 # Set vertex sizes: tokens vary by degree, documents have fixed size 
 deg_range_token <- max(deg[tokens_bp]) - min(deg[tokens_bp]) 
