@@ -5,12 +5,12 @@ This project applies natural language processing (NLP) and network analysis tech
 ## Corpus Overview
 
 - **Total Documents**: 24  
-- **Genres**: Politics (8), Sport (8), Reviews (8)  
+- **Genres**: Politics (8), Sports (8), Reviews (8)  
 - **Minimum Document Length**: 200 words  
 - **Format**: Plain text files in the `corpus` folder  
 - **Sources**:  
   - Politics: e.g., BBC News  
-  - Sport: e.g., ESPN  
+  - Sports: e.g., ESPN  
   - Reviews: e.g., IGN  
 - **Naming Convention**: `genre_id.txt` (e.g., `politics_1.txt`)
 
@@ -134,6 +134,7 @@ To enhance accuracy and insight:
 ## Author
 
 Developed by Juan Nathan.
+
 
 
 
