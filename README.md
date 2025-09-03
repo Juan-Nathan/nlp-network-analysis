@@ -112,7 +112,7 @@ Most documents and tokens were highly interconnected due to shared vocabulary. H
 Community detection and hierarchical clustering both grouped documents and tokens primarily by genre. Politics, Reviews, and Sports formed distinct clusters, with few overlaps like `sport_5.txt` appearing in review clusters due to thematic similarity.
 
 ### Clustering vs. Network Analysis
-- **Clustering** was highly accurate (~96%) and effective for detecting major genre divisions.
+- **Clustering** was highly accurate (≈96%) and effective for detecting major genre divisions.
 - **Network analysis** offered deeper insight into overlapping language, node influence, and structural roles that clustering could not reveal.
 - Used together, both methods provide a comprehensive understanding of both dominant groupings and nuanced relationships within the corpus.
 
@@ -134,6 +134,7 @@ To enhance accuracy and insight:
 ## Author
 
 Developed by Juan Nathan.
+
 
 
 
