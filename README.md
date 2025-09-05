@@ -1,4 +1,4 @@
-# 📚 Natural Language Processing & Network Analysis on a Document Corpus
+# 📚 Natural Language Processing & Network Analysis of a Document Corpus
 
 This project applies natural language processing (NLP) and network analysis techniques in R to analyze a collection of documents from three distinct genres: **Politics**, **Sports**, and **Reviews**. The workflow involves preprocessing raw text data, generating a document-term matrix, clustering documents, analyzing sentiment, and constructing multiple types of networks—document, token, and bipartite—to explore deeper relationships in the corpus.
 
@@ -51,7 +51,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
 - **Metrics**:  
   - `SentimentQDAP` (net polarity)  
   - `PositivityQDAP` (positive word proportion)  
-- **Findings (from descriptive statistics and hypothesis testing)**:
+- **Findings** (from descriptive statistics and hypothesis testing):
   - `SentimentQDAP`:
     - Sports had the most positive overall tone (highest polarity).
     - Reviews were slightly positive on average.
@@ -134,6 +134,7 @@ To enhance accuracy and insight:
 ## Author
 
 Developed by Juan Nathan.
+
 
 
 
