@@ -58,7 +58,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
     - Politics showed the lowest and most variable overall polarity.
   - `PositivityQDAP`:
     - Reviews had the highest median positivity and the smallest range, indicating the most consistent use of positive words. 
-    - Politics and Sports had similar median positivity and greater variability than Reviews.
+    - Politics and Sports had similar median positivity to each other and showed greater variability than Reviews.
     - Reviews were significantly more positive than Politics.
     - No significant difference in positivity was found between Reviews and Sports, or Sports and Politics.
 
@@ -132,6 +132,7 @@ To enhance accuracy and insight:
 ## Author
 
 Developed by Juan Nathan.
+
 
 
 
