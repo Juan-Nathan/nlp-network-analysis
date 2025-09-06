@@ -28,7 +28,7 @@ The workflow involves preprocessing raw text data, generating a document-term ma
 Performed using `tm`, `SnowballC`, and regular expressions:
 - Removed numbers, punctuation, quotes.
 - Converted to lowercase.
-- Removed common words and stopwords.
+- Removed common and stop words.
 - Applied stemming.
 
 ### Document-Term Matrix (DTM)
@@ -133,6 +133,7 @@ To enhance accuracy and insight:
 ## Author
 
 Developed by Juan Nathan.
+
 
 
 
