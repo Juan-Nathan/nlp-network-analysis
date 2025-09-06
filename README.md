@@ -73,8 +73,8 @@ Performed using `tm`, `SnowballC`, and regular expressions:
   - Exceptions like `reviews_1.txt`, which grouped with Politics, reflected shared themes or vocabulary.
 - **Enhanced Network**: 
   - Node color = `SentimentQDAP`
-  - Node size = eigenvector centrality 
-  - Edge width = shared token count
+  - Node size = Eigenvector centrality 
+  - Edge width = Shared token count
 
 ### Token Co-Occurrence Network
 - Nodes = Tokens  
@@ -85,9 +85,9 @@ Performed using `tm`, `SnowballC`, and regular expressions:
   - Tokens largely grouped by genre.
   - Exceptions like `futur` and `kill`, which grouped with Reviews instead of Politics, reflected overlap in usage across different genres.
 - **Enhanced Network**: 
-  - Node color = closeness centrality
-  - Node size = betweenness centrality
-  - Edge width = co-occurrence frequency
+  - Node color = Closeness centrality
+  - Node size = Betweenness centrality
+  - Edge width = Co-occurrence frequency
 
 ### Bipartite Document-Token Network
 - Documents linked to tokens they contain
@@ -97,10 +97,10 @@ Performed using `tm`, `SnowballC`, and regular expressions:
   - Documents and tokens generally grouped by genre.
   - Exceptions like `sports_5.txt` and `event`, which grouped with Reviews, reflected shared themes or vocabulary.
 - **Enhanced Network**: 
-  - Node color = genre
-  - Node shape = node type
-  - Token node size = degree
-  - Edge width = token frequency
+  - Node color = Genre
+  - Node shape = Node type
+  - Token node size = Degree
+  - Edge width = Token frequency
 
 ## Summary
 
@@ -135,6 +135,7 @@ To enhance accuracy and insight:
 ## Author
 
 Developed by Juan Nathan.
+
 
 
 
