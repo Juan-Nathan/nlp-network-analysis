@@ -55,12 +55,11 @@ Performed using `tm`, `SnowballC`, and regular expressions:
   - `PositivityQDAP` (positive word proportion)  
 - **Findings** (from descriptive statistics and hypothesis testing):
   - `SentimentQDAP`:
-    - Sports had the most positive overall tone (highest polarity).
-    - Reviews were slightly positive on average.
-    - Politics had the lowest and most variable polarity scores.
+    - Sports had the most positive net polarity.
+    - Politics showed the lowest and most variable overall polarity.
   - `PositivityQDAP`:
-    - Reviews used positive words most consistently and had the highest median positivity.
-    - Politics and Sports had similar average positivity but showed greater variability.
+    - Reviews had the highest median positivity and the smallest range, indicating the most consistent use of positive words. 
+    - Politics and Sports had similar median positivity to each other, with greater variability than Reviews.
     - Reviews were significantly more positive than Politics.
     - No significant difference between Reviews and Sports, or Sports and Politics.
 
@@ -73,7 +72,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
   - Documents mainly grouped by genre.
   - Exceptions like `reviews_1.txt`, which grouped with Politics, reflected shared themes or vocabulary.
 - **Enhanced Network**: 
-  - Node color = sentiment
+  - Node color = `SentimentQDAP`
   - Node size = eigenvector centrality 
   - Edge width = shared token count
 
@@ -86,7 +85,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
   - Tokens largely grouped by genre.
   - Exceptions like `futur` and `kill`, which grouped with Reviews instead of Politics, reflected overlap in usage across different genres.
 - **Enhanced Network**: 
-  - Node color = closeness
+  - Node color = closeness centrality
   - Node size = betweenness centrality
   - Edge width = co-occurrence frequency
 
@@ -136,6 +135,7 @@ To enhance accuracy and insight:
 ## Author
 
 Developed by Juan Nathan.
+
 
 
 
