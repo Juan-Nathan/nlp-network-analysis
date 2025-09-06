@@ -89,7 +89,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
 
 ### Bipartite Document-Token Network
 - Documents linked to tokens they contain
-- Nodes: Documents and tokens
+- Nodes = Documents and tokens
 - Edges = Token frequency in document
 - **Findings**:  
   - Documents and tokens generally grouped by genre.
@@ -133,6 +133,7 @@ To enhance accuracy and insight:
 ## Author
 
 Developed by Juan Nathan.
+
 
 
 
