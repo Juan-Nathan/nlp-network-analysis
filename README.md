@@ -61,7 +61,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
     - Reviews had the highest median positivity and the smallest range, indicating the most consistent use of positive words. 
     - Politics and Sports had similar median positivity to each other, with greater variability than Reviews.
     - Reviews were significantly more positive than Politics.
-    - No significant difference between Reviews and Sports, or Sports and Politics.
+    - No significant difference in positivity between Reviews and Sports, or Sports and Politics.
 
 ### Single-Mode Document Network
 - Nodes = Documents  
@@ -135,6 +135,7 @@ To enhance accuracy and insight:
 ## Author
 
 Developed by Juan Nathan.
+
 
 
 
