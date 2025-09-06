@@ -35,8 +35,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
 - Created using `tm`:
   - Converted the preprocessed corpus into a DTM.
   - Removed sparse terms from the DTM (retaining terms in ≥ 30% of documents).
-- Converted the DTM into a matrix.
-- Selected 30 informative tokens manually.
+- Manually selected 30 informative tokens to remain in the matrix.
 
 ## Analysis & Results
 
@@ -133,6 +132,7 @@ To enhance accuracy and insight:
 ## Author
 
 Developed by Juan Nathan.
+
 
 
 
