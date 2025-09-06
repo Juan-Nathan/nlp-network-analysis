@@ -66,8 +66,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
 ### Single-Mode Document Network
 - Nodes = Documents  
 - Edges = Number of shared tokens between documents   
-- **Central Documents**:  
-  - `politics_5.txt`, `reviews_3.txt`, `reviews_7.txt`  
+- **Important Documents**: `politics_5.txt`, `reviews_3.txt`, `reviews_7.txt`  
 - **Communities**:  
   - Documents mainly grouped by genre.
   - Exceptions like `reviews_1.txt`, which grouped with Politics, reflected shared themes or vocabulary.
@@ -79,8 +78,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
 ### Token Co-Occurrence Network
 - Nodes = Tokens  
 - Edges = Co-occurrence frequency across documents  
-- **Important Tokens**:  
-  - `world`, `fight`, `stori`, `state`
+- **Important Tokens**: `world`, `fight`, `stori`, `state`
 - **Communities**: 
   - Tokens largely grouped by genre.
   - Exceptions like `futur` and `kill`, which grouped with Reviews instead of Politics, reflected overlap in usage across different genres.
@@ -105,7 +103,7 @@ Performed using `tm`, `SnowballC`, and regular expressions:
 ## Summary
 
 ### Important Documents and Tokens
-Most documents and tokens were highly interconnected due to shared vocabulary. However, centrality analysis highlighted several key nodes:
+Most documents and tokens were highly interconnected due to shared vocabulary. However, centrality analysis highlighted several important nodes:
 - **Documents**: `politics_5.txt`, `reviews_3.txt`, and `reviews_7.txt` consistently showed high centrality, acting as bridges between genres.
 - **Tokens**: `world`, `fight`, `stori`, and `state` frequently co-occurred and played key connective roles across the corpus.
 
@@ -135,6 +133,7 @@ To enhance accuracy and insight:
 ## Author
 
 Developed by Juan Nathan.
+
 
 
 
